@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
-        serif: ["Roboto Condensed", "sans-serif"],
-        primary: ["Roboto", "sans-serif"],
-        secondary: ["Roboto Condensed", "sans-serif"],
+        sans: ["Libre Franklin", "sans-serif"],
+        serif: ["Libre Franklin", "sans-serif"],
+        primary: ["Libre Franklin", "sans-serif"],
+        secondary: ["Libre Franklin", "sans-serif"],
       },
       colors: {
         primary: "#00235D",
@@ -19,6 +19,8 @@ export default {
         deepNavyShadow: "#012136",
         lightSkyBlueHover: "#0072BCE5",
         lightBlue: "#D8F4FF",
+        mpaDarkBlue: "#242449",
+        mpaLightBlue: "#00A7EA",
         blue: {
           100: "#F4FCFF"
         }

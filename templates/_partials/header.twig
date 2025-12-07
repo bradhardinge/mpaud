@@ -1,40 +1,69 @@
 {# Header desktop #}
-<div x-data="{ isOpen: false }" x-effect="document.body.style.overflow = isOpen ? 'hidden' : ''" style="box-shadow: 0px 0px 64px 0px #00000026;" class="bg-white sticky top-0 z-50">
-	<header
-		class="max-w-[1361px] mx-auto flex justify-between items-center md2:items-stretch gap-14 px-5 pb-[6px] md2:pb-5 overflow-hidden relative z-[50]">
+<div 
+	x-data="{ isOpen: false }"
+	x-effect="document.body.style.overflow = isOpen ? 'hidden' : ''"
+	style="box-shadow: 0px 0px 64px 0px #00000026; background: linear-gradient(179.98deg, rgba(0, 0, 0, 0.2125) 0.01%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.25) 84.99%), #242449;"
+	class="sm:sticky sm:top-0 z-50 text-white"
+>
+	<header class="flex flex-col gap-8 p-6 py-16 sm:flex-row sm:py-8 sm:justify-between">
+
+		{# Logo #}
+		<div class="flex items-center justify-center">
+			<a href="/" class="block">
+				<img class="hidden sm:block w-64" src="{{ siteUrl('assets/images/mpaud-logo-h.png') }}" alt="Mornington Peninsula Audiology">
+				<img class="w-44 sm:hidden" src="{{ siteUrl('assets/images/mpaud-logo-v.png') }}" alt="Mornington Peninsula Audiology">
+			</a>
+		</div>
+
+		{# Primary Desktop menu #}
+		<nav role="navigation" aria-label="Primary">
+			<ul class="hidden">
+				<li><a href="/services">Services</a></li>
+				<li><a href="/services">Solutions</a></li>
+				<li><a href="/services">Funding</a></li>
+				<li><a href="/services">Hearing for Health</a></li>
+			</ul>
+			<div class="flex flex-col items-center gap-2">
+				<span class="text-sm">Book an appointment:</span>
+				<a href="tel:+61359552013" class="bg-white text-mpaDarkBlue fill-mpaDarkBlue flex items-center justify-center gap-2 p-4 px-6 rounded-full hover:bg-mpaLightBlue hover:text-white hover:fill-white transition-colors duration-200">
+					<svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.7923 1.4807L7.52242 2.78899C8.18133 3.96966 7.91685 5.5185 6.87904 6.55629C6.87904 6.55629 5.62036 7.81517 7.90256 10.0975C10.1841 12.379 11.4437 11.121 11.4437 11.121C12.4815 10.0832 14.0303 9.81869 15.211 10.4776L16.5193 11.2077C18.3022 12.2027 18.5127 14.7029 16.9456 16.27C16.004 17.2116 14.8504 17.9444 13.5753 17.9926C11.4286 18.0741 7.78308 17.5308 4.12616 13.8739C0.469273 10.2169 -0.0740114 6.57139 0.00737108 4.42474C0.0557123 3.14956 0.788402 1.99601 1.73004 1.05439C3.29711 -0.512686 5.79731 -0.30213 6.7923 1.4807Z" fill="currentColor"/>
+					</svg>
+					<span class="font-bold italic">(03) 5955 2013</span>
+				</a>
+			</div>
+		</nav>
 
 		{# Mobile menu button #}
-		<button @click.stop="isOpen = true" class="md2:hidden mt-[1.3125rem] self-start cursor-pointer h-fit">
-			<img src="{{ siteUrl('assets/icons/menu.svg') }}" alt="mobile menu trigger"/>
-		</button>
+		<button 
+			@click.stop="isOpen = true" 
+			class="hidden absolute top-8 right-8 md:hidden self-start cursor-pointer h-fit fill-white"
+		>
+			<svg width="30" height="23" viewBox="0 0 30 23" fill="currenColor" xmlns="http://www.w3.org/2000/svg">
+			<path d="M28.3333 19.7143L28.3763 19.7148C29.2769 19.7373 30 20.464 30 21.3572C30 22.2645 29.2538 23 28.3333 23H1.66665C0.746176 23 4.1233e-07 22.2645 0 21.3572C0 20.4498 0.746176 19.7143 1.66665 19.7143H28.3333ZM28.3333 9.85716L28.3763 9.85769C29.2769 9.88017 30 10.6068 30 11.5C30 12.4073 29.2538 13.1428 28.3333 13.1428H1.66665C0.746176 13.1428 2.06165e-07 12.4073 0 11.5C0 10.5927 0.746176 9.85716 1.66665 9.85716H28.3333ZM28.3333 0C29.2538 0 30 0.735517 30 1.64284C30 2.55017 29.2538 3.28569 28.3333 3.28569H1.66665C0.746176 3.28569 0 2.55017 0 1.64284C0 0.735517 0.746176 0 1.66665 0H28.3333Z" fill="currenColor"/>
+			</svg>			
+		</button>		
 
-		<div
-			class="w-full md2:flex flex-col justify-between hidden">
-			{# Secondary Desktop menu #}
-			<nav role="navigation" aria-label="Secondary">
-				Secondary desktop menu
-			</nav>
-
-			{# Primary Desktop menu #}
-			<nav role="navigation" aria-label="Primary">
-				Primary desktop menu
-			</nav>
-		</div>
 	</header>
+	<div class="h-2 w-full bg-gradient-to-r from-[#00A7EA] via-[#16BAAD] to-[#C8DF8A]"></div>
 
+	{# Mobile menu overlay #}
+	<div :class="isOpen ? 'fixed z-20 opacity-80' : 'absolute z-[-1] opacity-0 pointer-events-none'" class="block md:hidden transition-[opacity] duration-300 ease-linear top-0 left-0 w-full h-full bg-black"></div>
 
-	<!-- Mobile menu overlay -->
-	<div :class="isOpen ? 'fixed z-[55] opacity-80' : 'absolute z-[-1] opacity-0 pointer-events-none'" class="block md2:hidden transition-[opacity] duration-300 ease-linear top-0 left-0 w-full h-full bg-[#000000CC]"></div>
-
-	<!-- Mobile menu -->
-	<div x-cloak @click.away="isOpen = false" :class="isOpen ? 'right-0' : '-right-[300px]'" class="h-screen w-[300px] overflow-y-auto fixed top-0 bg-[#00235D] z-[110] transition-[right] duration-300 ease-linear shadow-[-4px_0_10px_rgba(0,0,0,0.2)] p-6">
-		<button @click="isOpen = false" class="absolute top-[1.6875rem] right-[1.3125rem] p-2 rounded-full border-2 border-white text-white">
-			<svg width="10" height="11" viewbox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1.4 10.4823L0.0176775 9.10002L3.60884 5.50886L3.61771 5.49999L3.60881 5.49115L0.0177085 1.92499L1.4 0.542702L4.99116 4.13386L5.00003 4.14273L5.00887 4.13383L8.57503 0.542733L9.95729 1.92499L6.36619 5.49115L6.35729 5.49999L6.36616 5.50886L9.95732 9.10002L8.57503 10.4823L5.00887 6.89122L5.00003 6.88232L4.99116 6.89119L1.4 10.4823Z" fill="currentColor" stroke="currentColor" stroke-width="0.025"></path>
-			</svg>
+	{# Mobile menu #}
+	<div
+		@click.away="isOpen = false" 
+		:class="isOpen ? 'right-0' : '-right-[300px]'" 
+		class="h-screen w-[300px] overflow-y-auto fixed top-0 bg-[#00235D] z-[110] transition-[right] duration-300 ease-linear shadow-[-4px_0_10px_rgba(0,0,0,0.2)] p-6"
+		x-cloak 
+	>
+		<button 
+			@click="isOpen = false" 
+			class="absolute top-0 right-0 text-white"
+		>
+			<svg width="10" height="11" viewbox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.4 10.4823L0.0176775 9.10002L3.60884 5.50886L3.61771 5.49999L3.60881 5.49115L0.0177085 1.92499L1.4 0.542702L4.99116 4.13386L5.00003 4.14273L5.00887 4.13383L8.57503 0.542733L9.95729 1.92499L6.36619 5.49115L6.35729 5.49999L6.36616 5.50886L9.95732 9.10002L8.57503 10.4823L5.00887 6.89122L5.00003 6.88232L4.99116 6.89119L1.4 10.4823Z" fill="currentColor" stroke="currentColor" stroke-width="0.025"></path></svg>
 		</button>
-
-		<div class="mt-12">
+		<div class="">
 			{# Mobile menu #}
 			<nav role="navigation" aria-label="Mobile">
 				Mobile menu

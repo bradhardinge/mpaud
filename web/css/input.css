@@ -1,18 +1,4 @@
-@font-face {
-  font-family: "Roboto"; /* Name for your font */
-  src: url("/assets/fonts/Roboto-VariableFont.ttf") format("truetype");
-  font-optical-sizing: auto;
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto Condensed"; /* Name for your font */
-  src: url("/assets/fonts/RobotoCondensed-VariableFont.ttf") format("truetype");
-  font-optical-sizing: auto;
-  font-weight: 100 900;
-  font-style: normal;
-}
+/* Fonts are imported from Google Fonts in the layout file */
 
 [x-cloak] {
   display: none !important;
@@ -27,39 +13,24 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* font-family: "Roboto", "sans-serif"; */
+    font-family: "Libre Franklin", "sans-serif";
+  }
+
+  body {
+    background: linear-gradient(180deg, #FFFFFF 9.01%, rgba(255, 255, 255, 0) 100%), linear-gradient(90deg, rgba(0, 167, 234, 0.12) 0%, rgba(22, 186, 173, 0.12) 50%, rgba(200, 223, 138, 0.12) 100%);
   }
 
   /* headings */
   h1 {
-    @apply font-secondary font-[900] text-vividBlue mb-4 md:mb-6 text-3xl md:text-5xl xl:text-[62px] text-nowrap pb-1 leading-[40px] md:leading-[56px] xl:leading-[76px];
   }
 
   h2 {
-    @apply font-secondary font-[900] text-vividBlue text-2xl md:text-4xl leading-normal mb-5 md:mb-10 relative;
-  }
-
-  h2::after {
-    @apply content-[''] h-[6px] w-12 bg-primary absolute hidden md:block;
-    top: 130%;
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  h2[style*="center"]::after,
-  h2[style*="text-align:center"]::after,
-  h2[style*="text-align: center"]::after,
-  h2.text-center::after,
-  .text-center h2::after {
-    @apply mx-auto left-1/2 -translate-x-1/2;
   }
 
   h3 {
-    @apply font-secondary font-[900] text-vividBlue text-xl md:text-2xl leading-[32px] md:leading-[40px] mb-2 md:mb-3;
   }
 
   h4 {
-    @apply font-secondary font-[900] text-vividBlue text-lg md:text-2xl leading-[32px] md:leading-[40px] mb-2 md:mb-3;
   }
 
   /* general links */
@@ -68,7 +39,7 @@
   }
 
   a {
-    @apply text-vividBlue hover:text-vividBlue/80 transition-colors duration-200;
+    
   }
 
   main div a,
@@ -78,7 +49,6 @@
 
   /* horizontal rule */
   hr {
-    @apply block h-[6px] w-36 bg-vividBlue mx-auto my-12 md:my-16;
   }
 
   /* paragraphs */
@@ -118,23 +88,16 @@
 
 @layer components {
   .button {
-    @apply inline-flex items-center justify-center font-secondary no-underline font-[900] text-white text-base md:text-lg xl:text-xl leading-6 bg-[#0072BC] px-4 py-2 md:px-6 md:py-3 xl:px-8 xl:py-4 rounded-[52px] hover:bg-lightSkyBlue hover:text-black transition-all duration-300;
-  }
 
-  .image-block img {
-    @apply w-full;
   }
 
   /* ------ rich text ------ */
   /* .rich-text {} */
 
   .rich-text ul {
-    @apply list-none space-y-4 lg:space-y-[20px] ml-0 mt-5;
   }
 
   .rich-text ul li {
-    background-size: 21px 21px;
-    @apply pl-10 list-none bg-[url('/assets/icons/checkmark.svg')] bg-no-repeat bg-[0px_2px];
   }
 
 }
