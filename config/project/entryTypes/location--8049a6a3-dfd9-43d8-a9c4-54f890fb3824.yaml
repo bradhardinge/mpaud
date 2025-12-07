@@ -1,0 +1,87 @@
+color: null
+description: null
+fieldLayouts:
+  f39d7161-387a-4231-b3c7-392494b80037:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-26T06:35:35+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Name
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1765ed8d-960f-4ff9-a027-6d5bcd39ad0a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T06:38:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 671235b1-acc2-4c5d-838b-12d9867e177d # Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Tag
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d74f315e-ddc3-4031-a388-12c2f260dd11
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T06:38:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee67e885-07fb-43b3-8d67-edff0871c3cd # Rich Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Address + Opening Times'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ae61b418-5e6a-4c65-a64d-e5e97c342789
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: cec7e825-bffc-4b73-b204-9417851084d7
+        userCondition: null
+handle: location
+hasTitleField: true
+icon: null
+name: Location
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

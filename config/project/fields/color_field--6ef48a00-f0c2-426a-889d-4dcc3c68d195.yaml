@@ -1,0 +1,55 @@
+columnSuffix: null
+handle: color_field
+instructions: null
+name: Color
+searchable: false
+settings:
+  allowCustomColors: true
+  palette:
+    -
+      __assoc__:
+        -
+          - color
+          - '#00a7ea'
+        -
+          - label
+          - 'MPA Blue'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - color
+          - '#16baad'
+        -
+          - label
+          - 'MPA Teal'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - color
+          - '#87d197'
+        -
+          - label
+          - 'MPA Green'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - color
+          - '#c8df8a'
+        -
+          - label
+          - 'MPA Yellow'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

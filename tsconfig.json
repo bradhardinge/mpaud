@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "amd",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./web/js",
+    "outFile": "./web/js/main.js"
+    // "moduleResolution": "node"
+  },
+  "include": ["./web/js/**/*.ts"],
+  "exclude": ["node_modules"]
+}

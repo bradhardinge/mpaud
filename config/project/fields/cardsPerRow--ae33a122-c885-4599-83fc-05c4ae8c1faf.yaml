@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: cardsPerRow
+instructions: null
+name: 'Cards Per Row'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 3
+  max: 5
+  min: 2
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  step: 1
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

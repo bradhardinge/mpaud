@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 073b2855-a336-4cd0-b263-82b6456e86f5 # Page
+handle: pages
+maxAuthors: 1
+name: Pages
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  6f3ca0b1-e09f-4925-9771-3f667dcb00c6: # Mornington Peninsula Audiology
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: a27c5158-0ce7-473c-8eb5-b1eb64021505
+type: structure

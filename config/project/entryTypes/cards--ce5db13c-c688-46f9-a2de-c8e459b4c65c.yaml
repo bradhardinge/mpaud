@@ -1,0 +1,87 @@
+color: null
+description: null
+fieldLayouts:
+  6baf1af8-5a0b-4e9b-b625-8d95587e0a6e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-26T06:57:36+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Heading
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 44ed7569-3ceb-4664-b31f-67d892de7c04
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T07:03:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c7aa23af-5ac2-43bf-8642-ab53d23f7083 # Cards
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 390a6e6d-9d83-48e6-8354-70af2aaced22
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T07:03:13+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae33a122-c885-4599-83fc-05c4ae8c1faf # Cards Per Row
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Cards Per Row'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea005bfa-5e15-4b1f-9474-c4927c9653f5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 00a2d9fd-f885-447e-b1e6-fb0b479a0574
+        userCondition: null
+handle: cards
+hasTitleField: true
+icon: null
+name: Cards
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,8 @@
+{% import '_utilities/image' as img %}
+
+<div class="flex justify-center w-full mb-4 md:mb-8 lg:mb-10">
+  <figure class="w-full max-w-[800px] flex items-center justify-center overflow-hidden">
+    {% set assets = entry.image.eagerly().all() %}
+    {{ img.pictures(assets) }}
+  </figure>
+</div>

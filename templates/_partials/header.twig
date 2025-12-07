@@ -1,0 +1,44 @@
+{# Header desktop #}
+<div x-data="{ isOpen: false }" x-effect="document.body.style.overflow = isOpen ? 'hidden' : ''" style="box-shadow: 0px 0px 64px 0px #00000026;" class="bg-white sticky top-0 z-50">
+	<header
+		class="max-w-[1361px] mx-auto flex justify-between items-center md2:items-stretch gap-14 px-5 pb-[6px] md2:pb-5 overflow-hidden relative z-[50]">
+
+		{# Mobile menu button #}
+		<button @click.stop="isOpen = true" class="md2:hidden mt-[1.3125rem] self-start cursor-pointer h-fit">
+			<img src="{{ siteUrl('assets/icons/menu.svg') }}" alt="mobile menu trigger"/>
+		</button>
+
+		<div
+			class="w-full md2:flex flex-col justify-between hidden">
+			{# Secondary Desktop menu #}
+			<nav role="navigation" aria-label="Secondary">
+				Secondary desktop menu
+			</nav>
+
+			{# Primary Desktop menu #}
+			<nav role="navigation" aria-label="Primary">
+				Primary desktop menu
+			</nav>
+		</div>
+	</header>
+
+
+	<!-- Mobile menu overlay -->
+	<div :class="isOpen ? 'fixed z-[55] opacity-80' : 'absolute z-[-1] opacity-0 pointer-events-none'" class="block md2:hidden transition-[opacity] duration-300 ease-linear top-0 left-0 w-full h-full bg-[#000000CC]"></div>
+
+	<!-- Mobile menu -->
+	<div x-cloak @click.away="isOpen = false" :class="isOpen ? 'right-0' : '-right-[300px]'" class="h-screen w-[300px] overflow-y-auto fixed top-0 bg-[#00235D] z-[110] transition-[right] duration-300 ease-linear shadow-[-4px_0_10px_rgba(0,0,0,0.2)] p-6">
+		<button @click="isOpen = false" class="absolute top-[1.6875rem] right-[1.3125rem] p-2 rounded-full border-2 border-white text-white">
+			<svg width="10" height="11" viewbox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1.4 10.4823L0.0176775 9.10002L3.60884 5.50886L3.61771 5.49999L3.60881 5.49115L0.0177085 1.92499L1.4 0.542702L4.99116 4.13386L5.00003 4.14273L5.00887 4.13383L8.57503 0.542733L9.95729 1.92499L6.36619 5.49115L6.35729 5.49999L6.36616 5.50886L9.95732 9.10002L8.57503 10.4823L5.00887 6.89122L5.00003 6.88232L4.99116 6.89119L1.4 10.4823Z" fill="currentColor" stroke="currentColor" stroke-width="0.025"></path>
+			</svg>
+		</button>
+
+		<div class="mt-12">
+			{# Mobile menu #}
+			<nav role="navigation" aria-label="Mobile">
+				Mobile menu
+			</nav>
+		</div>
+	</div>
+</div>

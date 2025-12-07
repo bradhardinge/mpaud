@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Mornington Peninsula Audiology'
+primary: true
+siteGroup: 2c774dbf-fbfd-4a37-ac7e-e3ca01edce3c # Mornington Peninsula Audiology
+sortOrder: 1

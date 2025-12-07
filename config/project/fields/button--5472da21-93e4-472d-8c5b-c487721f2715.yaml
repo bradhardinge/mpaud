@@ -1,0 +1,111 @@
+columnSuffix: null
+handle: button
+instructions: null
+name: Button
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - e71cc64e-0e01-4fdc-b955-285272537cfb
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - b34aed27-0bda-43c7-bd15-062e6742f8ad
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-25T10:56:51+00:00'
+                            11:
+                              - uid
+                              - 40b86b23-c546-4825-a38d-3760dc4f4539
+                            14:
+                              - fieldUid
+                              - 0f9093a9-149b-4e53-bb0b-7e22329362bd # Link
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-25T10:56:51+00:00'
+                            11:
+                              - uid
+                              - b89ac503-3889-465b-b65e-ff6de2704a3e
+                            14:
+                              - fieldUid
+                              - 671235b1-acc2-4c5d-838b-12d9867e177d # Text
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            6:
+                              - required
+                              - false
+                            7:
+                              - providesThumbs
+                              - false
+                            8:
+                              - includeInCards
+                              - false
+                            9:
+                              - width
+                              - 100
+                            10:
+                              - dateAdded
+                              - '2025-11-25T10:56:51+00:00'
+                            11:
+                              - uid
+                              - cafaf09b-24a4-4be5-aea8-2be079f36bc3
+                            14:
+                              - fieldUid
+                              - f1a9917d-3e77-4e70-be3b-a8ff2bf30299 # Icon
+            3:
+              - cardThumbAlignment
+              - end
+  viewMode: grouped
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

@@ -1,0 +1,77 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  06088ea0-fe5b-4187-b696-ef06374d2a14:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-26T06:22:42+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 7d094a9b-d395-455b-b3ab-d4d5a6b6d0e0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            dateAdded: '2025-11-26T06:24:25+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: true
+            required: true
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: 3c78d0c8-d84b-4216-bcaa-3798a2ddcffd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 2bcec5aa-5452-42e7-b408-7ca744b4c17a
+        userCondition: null
+fs: amazonS3
+handle: images
+name: Images
+sortOrder: 1
+subpath: images
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

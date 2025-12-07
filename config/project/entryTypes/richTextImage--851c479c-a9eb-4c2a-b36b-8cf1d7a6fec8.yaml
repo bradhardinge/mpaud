@@ -1,0 +1,74 @@
+color: null
+description: null
+fieldLayouts:
+  663638fd-d26d-45d4-a2f6-e7ae03766504:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-11-26T06:55:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ee67e885-07fb-43b3-8d67-edff0871c3cd # Rich Text
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 56c3390b-899b-49af-8ceb-c2519f21b219
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T06:55:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 693cd97b-ac7f-4b6c-82d5-87c4e7f820a0 # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 53834363-bc47-4a06-a754-6ac7c753cb8c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T06:55:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 00290af5-f690-45cb-af8d-02bf8d8ca275 # Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Image Alignment'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7d8017ec-cbf5-40a0-9dd0-c98ac85507fb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: aac3d44d-bf2e-4168-8779-8b933440b88b
+        userCondition: null
+handle: richTextImage
+hasTitleField: false
+icon: null
+name: 'Rich Text + Image'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

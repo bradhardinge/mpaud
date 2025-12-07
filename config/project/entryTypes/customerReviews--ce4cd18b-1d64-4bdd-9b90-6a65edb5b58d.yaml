@@ -1,0 +1,53 @@
+color: null
+description: null
+fieldLayouts:
+  9c01f10e-7609-400f-922c-373b90a2a2d2:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-26T06:41:53+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Heading
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1e95a511-4634-41a9-a6c2-a5fbe59c9bde
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 328a02a9-54b0-40ca-a61a-ba6e323473ed
+        userCondition: null
+handle: customerReviews
+hasTitleField: true
+icon: null
+name: 'Customer Reviews'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

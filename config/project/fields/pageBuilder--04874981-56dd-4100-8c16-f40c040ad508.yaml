@@ -1,0 +1,93 @@
+columnSuffix: null
+handle: pageBuilder
+instructions: null
+name: 'Page Builder'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 34f458c7-b717-442c-a916-61606cbf90b1 # Rich Text
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 851c479c-a9eb-4c2a-b36b-8cf1d7a6fec8 # Rich Text + Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 55b0d170-4974-403d-b5ff-e22661a0015b # Callout Banner
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - ce5db13c-c688-46f9-a2de-c8e459b4c65c # Cards
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 8ff32f81-123b-4d3a-ad39-62710da32094 # Link Cards
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - fd8f58eb-9e45-4ac8-ac27-aa5e37f4a69f # Call to Action
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - 9d66ef4b-2856-4a71-9b0a-fd012ac57ea8 # Highlight Boxes
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - d641485b-e63f-4a4d-a871-4371407aa5c6 # Locations Map
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - ce4cd18b-1d64-4bdd-9b90-6a65edb5b58d # Customer Reviews
+        -
+          - group
+          - Special
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

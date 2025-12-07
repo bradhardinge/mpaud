@@ -1,0 +1,70 @@
+color: null
+description: null
+fieldLayouts:
+  8c362f13-d800-471d-9dff-ddc4e60d9bcb:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-11-26T06:34:45+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Heading
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c886def6-ad8f-460b-b33b-77f94ffa23b3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-11-26T06:39:46+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ff7f1b41-ed40-43ec-acfb-2cccdef370d3 # Locations
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ad726d8-c9be-444c-86cb-576a10e25acf
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8c0360db-8ec0-4659-ab76-019e79457214
+        userCondition: null
+handle: locationsMap
+hasTitleField: true
+icon: null
+name: 'Locations Map'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

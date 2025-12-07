@@ -1,0 +1,158 @@
+dateModified: 1764143275
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: true
+      key: singles
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: f797d9f5-3c67-44c9-8350-57cb6bb01433
+            values:
+              - 68839762-be2e-4573-a150-de3856e70447 # Home
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      key: 'custom:f6a9f47b-23ef-4f56-a7e8-49c395910bc3'
+      label: Home
+      tableAttributes: '-'
+      type: custom
+    -
+      heading: Structures
+      key: 'heading:6ffd9060-154d-4a48-b3a9-35aa6466e2b9'
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: structure
+      disabled: false
+      key: 'section:42fa50fb-2b85-4a3e-8903-15993ef32517' # Pages
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+      type: native
+email:
+  fromEmail: brad@webrad.co
+  fromName: 'Mornington Peninsula Audiology'
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  amazonS3:
+    hasUrls: true
+    name: 'Amazon S3'
+    settings:
+      addSubfolderToRootUrl: false
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: $CLOUDFRONT_DISTRIBUTION_ID
+      cfPrefix: $CLOUDFRONT_PATH_PREFIX
+      expires: '3 months'
+      keyId: $S3_KEY_ID
+      makeUploadsPublic: false
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: ''
+    type: craft\awss3\Fs
+    url: $CLOUDFRONT_URL
+meta:
+  __names__:
+    0f9093a9-149b-4e53-bb0b-7e22329362bd: Link # Link
+    2c774dbf-fbfd-4a37-ac7e-e3ca01edce3c: 'Mornington Peninsula Audiology' # Mornington Peninsula Audiology
+    6ef48a00-f0c2-426a-889d-4dcc3c68d195: Color # Color
+    6f3ca0b1-e09f-4925-9771-3f667dcb00c6: 'Mornington Peninsula Audiology' # Mornington Peninsula Audiology
+    8ff32f81-123b-4d3a-ad39-62710da32094: 'Link Cards' # Link Cards
+    9d66ef4b-2856-4a71-9b0a-fd012ac57ea8: 'Highlight Boxes' # Highlight Boxes
+    34f458c7-b717-442c-a916-61606cbf90b1: 'Rich Text' # Rich Text
+    42fa50fb-2b85-4a3e-8903-15993ef32517: Pages # Pages
+    55b0d170-4974-403d-b5ff-e22661a0015b: 'Callout Banner' # Callout Banner
+    63a398d1-b83c-4fab-9c1f-713ff1fa79b4: Card # Card
+    073b2855-a336-4cd0-b263-82b6456e86f5: Page # Page
+    00290af5-f690-45cb-af8d-02bf8d8ca275: Alignment # Alignment
+    693cd97b-ac7f-4b6c-82d5-87c4e7f820a0: Image # Image
+    851c479c-a9eb-4c2a-b36b-8cf1d7a6fec8: 'Rich Text + Image' # Rich Text + Image
+    5472da21-93e4-472d-8c5b-c487721f2715: Button # Button
+    8049a6a3-dfd9-43d8-a9c4-54f890fb3824: Location # Location
+    671235b1-acc2-4c5d-838b-12d9867e177d: Text # Text
+    04874981-56dd-4100-8c16-f40c040ad508: 'Page Builder' # Page Builder
+    68839762-be2e-4573-a150-de3856e70447: Home # Home
+    a54880ee-8541-4082-a866-f0ec9b93f542: 'Link Card' # Link Card
+    ae33a122-c885-4599-83fc-05c4ae8c1faf: 'Cards Per Row' # Cards Per Row
+    b2ae5f72-f2cd-4c3a-ae2a-117ec59f005f: 'Link Card Image' # Link Card Image
+    bd006aeb-6ded-47b8-81ec-65dcd6db4df6: 'Link Cards' # Link Cards
+    c7aa23af-5ac2-43bf-8642-ab53d23f7083: Cards # Cards
+    c7e2dc31-0a3c-47b4-862b-604eddf676a3: Simple # Simple
+    c8fc36ec-7799-41e0-b5a8-4a15a8f538f3: Images # Images
+    ce4cd18b-1d64-4bdd-9b90-6a65edb5b58d: 'Customer Reviews' # Customer Reviews
+    ce5db13c-c688-46f9-a2de-c8e459b4c65c: Cards # Cards
+    d641485b-e63f-4a4d-a871-4371407aa5c6: 'Locations Map' # Locations Map
+    dccda9ee-32a2-4263-8502-f56aa033d788: 'Highlight Boxes' # Highlight Boxes
+    de9382d4-0aaf-4d3d-bbab-1c6f59951274: 'Highlight Box' # Highlight Box
+    ee67e885-07fb-43b3-8d67-edff0871c3cd: 'Rich Text' # Rich Text
+    f1a9917d-3e77-4e70-be3b-a8ff2bf30299: Icon # Icon
+    fd8f58eb-9e45-4ac8-ac27-aa5e37f4a69f: 'Call to Action' # Call to Action
+    ff7f1b41-ed40-43ec-acfb-2cccdef370d3: Locations # Locations
+plugins:
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  mailgun:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: FE75P27TZ0CNTFX1DFAZ2FLP
+    schemaVersion: 3.0.13
+system:
+  edition: solo
+  live: true
+  name: 'Mornington Peninsula Audiology'
+  retryDuration: null
+  schemaVersion: 5.8.0.3
+  timeZone: Australia/Melbourne
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
