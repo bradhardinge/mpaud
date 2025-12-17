@@ -21,19 +21,22 @@ export default {
         lightBlue: "#D8F4FF",
         mpaDarkBlue: "#242449",
         mpaLightBlue: "#00A7EA",
+        mpaTeal: "#16BAAD",
+        mpaGreen: "#87D197",
+        mpaYellow: "#C8DF8A",
         blue: {
           100: "#F4FCFF"
         }
       },
       // custom breakpoints
       screens: {
-        "md2": "970px",
+        "md2": "972px",
       },
       container: {
         center: true,
         padding: "1.25rem",
         screens: {
-          DEFAULT: "1361px",
+          DEFAULT: "1280px",
         },
       },
       boxShadow: {

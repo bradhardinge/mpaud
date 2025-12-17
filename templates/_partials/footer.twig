@@ -1,5 +1,53 @@
 <footer class="w-full mx-auto bg-mpaDarkBlue">
-	<div class="container mx-auto p-6 text-center text-white">
-		&copy; {{ "now"|date("Y") }} Mornington Peninsula Audiology
+	<div class="container mx-auto p-6 py-8 text-white gap-2 md:flex-row md:py-12">
+
+		<nav role="navigation" aria-label="Primary" class="flex flex-col gap-2 text-center md:text-left md:flex-row md:items-start md:justify-center md:gap-20">
+			{% set footer1Nodes = craft.navigation.nodes('footer1').all() %}
+			<ul class="list-none m-0 p-0 gap-2 font-bold text-sm flex flex-col">
+				{% nav node in footer1Nodes %}
+					<li class="p-0 m-0 {% if node.classes | length %}{{ node.classes }}{% endif %}">
+						<a {% if node.url %}href="{{ node.url }}"{% endif %} class="text-white hover:text-white {% if node.active %}is-active{% endif %}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
+							{{- node.title -}}
+						</a>
+						{% ifchildren %}
+							<ul class="list-none m-0 p-0 pt-2 gap-2 font-normal text-sm flex flex-col">
+								{% children %}
+							</ul>
+						{% endifchildren %}							
+					</li>
+				{% endnav %}
+			</ul>
+			{% set footer2Nodes = craft.navigation.nodes('footer2').all() %}
+			<ul class="list-none m-0 p-0 gap-2 font-bold text-sm flex flex-col">
+				{% nav node in footer2Nodes %}
+					<li class="p-0 m-0 {% if node.classes | length %}{{ node.classes }}{% endif %}">
+						<a {% if node.url %}href="{{ node.url }}"{% endif %} class="text-white hover:text-white {% if node.active %}is-active{% endif %}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
+							{{- node.title -}}
+						</a>
+						{% ifchildren %}
+							<ul class="list-none m-0 p-0 py-2 gap-2 font-normal text-sm flex flex-col">
+								{% children %}
+							</ul>
+						{% endifchildren %}							
+					</li>
+				{% endnav %}
+			</ul>
+			{% set footer3Nodes = craft.navigation.nodes('footer3').all() %}
+			<ul class="list-none m-0 p-0 gap-2 font-bold text-sm flex flex-col">
+				{% nav node in footer3Nodes %}
+					<li class="p-0 m-0 {% if node.classes | length %}{{ node.classes }}{% endif %}">
+						<a {% if node.url %}href="{{ node.url }}"{% endif %} class="text-white hover:text-white {% if node.active %}is-active{% endif %}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
+							{{- node.title -}}
+						</a>
+						{% ifchildren %}
+							<ul class="list-none m-0 p-0 py-2 gap-2 font-normal text-sm flex flex-col">
+								{% children %}
+							</ul>
+						{% endifchildren %}							
+					</li>
+				{% endnav %}
+			</ul>
+		</nav>	
+		<p class="text-xs pt-8 text-center m-0 p-0">&copy; {{ "now"|date("Y") }} Mornington Peninsula Audiology</p>
 	</div>
 </footer>

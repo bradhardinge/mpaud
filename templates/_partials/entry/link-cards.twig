@@ -1,0 +1,34 @@
+{% if block.title %}<h2 class="text-center">{{ block.title }}</h2>{% endif %}
+{% if block.linkCards|length %}
+  <div class="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+    {% for linkCard in block.linkCards %}
+      <a 
+        href="{{ linkCard.link_field }}"
+        class="relative flex gap-6 items-center bg-white rounded-lg shadow-xl no-underline text-mpaDarkBlue shadow-mpaLightBlue/5 p-6 pr-20 md:w-[calc(50%-0.75rem)] transition-all hover:scale-105 scale"
+        onmouseover="this.style.backgroundColor = 'rgba({{ linkCard.color_field.getRed() }}, {{ linkCard.color_field.getGreen() }}, {{ linkCard.color_field.getBlue() }}, 0.3)'" 
+        onmouseout="this.style.backgroundColor = 'white'"
+      >
+        {% if linkCard.image %}
+          {% set image = linkCard.image.one() %}
+          {% if image %}
+            <div class="hidden basis-1/4 sm:block">
+              <img src="{{ image.url }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}" class="w-full h-auto aspect-[1/1] object-cover block rounded-md shadow-md" />
+            </div>
+          {% endif %}  
+        {% endif %}
+        <div class="sm:basis-3/4">      
+          {% if linkCard.title %}
+            <h3>{{ linkCard.title }}</h3>
+          {% endif %}
+          {{ linkCard.richText_field | raw }}
+        </div>
+        <div 
+          class="absolute bottom-6 right-6 w-12 h-12 flex items-center justify-center text-white rounded-full"
+          style="background-color: {{ linkCard.color_field }};"
+        > 
+          <svg width="10" height="16" viewBox="0 0 10 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.59012 6.90939L2.41863 0.418952C1.86514 -0.139651 0.967954 -0.139651 0.415123 0.418952C-0.138374 0.970904 -0.138374 1.86201 0.415123 2.41396L6.5802 8L0.415123 13.586C-0.138374 14.138 -0.138374 15.0291 0.415123 15.581C0.967954 16.1397 1.86514 16.1397 2.41863 15.581L9.59012 9.09061C9.88984 8.79136 10.0217 8.39235 9.9971 8C10.0217 7.60765 9.88984 7.20864 9.59012 6.90939Z" fill="currentColor"/></svg>
+        </div>        
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

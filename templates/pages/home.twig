@@ -1,15 +1,58 @@
 {% extends "_layouts/default" %}
 
+{% block header %}
+	{% include "_partials/header-home" %}
+{% endblock %}
+
 {% block content %}
 
 	<div class="page__content">
-		<div class="container mx-auto p-6 py-12 text-center">
-			<p>Our <strong>new website</strong> is launching soon!</p>
-			<p>In the meantime, you can contact us via:</p>
-			<p>64 Robertson Drive,<br>Mornington VIC 3931</p>
-			<p>Phone: <a href="tel:+61359552013">03 5955 2013</a><br>Email: <a href="mailto:info@mpaud.com.au">info@mpaud.com.au</a></p>
-			
-			{# {{ entry.pageContent }} #}
+		<div class="container mx-auto pt-6 pb-10">
+
+			{% for pageContent in entry.pageBuilder.all() %}
+				{% set typeHandle = pageContent.type.handle %}
+
+				{% switch typeHandle %}
+					{% case 'richText' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/rich-text" with { block: pageContent } %}
+						</div>
+					{% case 'richTextImage' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/rich-text-image" with { block: pageContent } %}
+						</div>
+					{% case 'calloutBanner' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/callout-banner" with { block: pageContent } %}
+						</div>
+					{% case 'cards' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/cards" with { block: pageContent } %}
+						</div>
+					{% case 'linkCards' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/link-cards" with { block: pageContent } %}
+						</div>
+					{% case 'callToAction' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/call-to-action" with { block: pageContent } %}
+						</div>
+					{% case 'highlightBoxes' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/highlight-boxes" with { block: pageContent } %}
+						</div>
+					{% case 'locationsMap' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/locations-map" with { block: pageContent } %}
+						</div>
+					{% case 'customerReviews' %}
+						<div class="pt-4 pb-12">
+						{% include "_partials/entry/customer-reviews" with { block: pageContent } %}
+						</div>
+					{% default %}
+				{% endswitch %}
+			{% endfor %}
+
 		</div>
 	</div>
 

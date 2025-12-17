@@ -15,19 +15,26 @@
     -moz-osx-font-smoothing: grayscale;
     font-family: "Libre Franklin", "sans-serif";
   }
-
   body {
     background: linear-gradient(180deg, #FFFFFF 9.01%, rgba(255, 255, 255, 0) 100%), linear-gradient(90deg, rgba(0, 167, 234, 0.12) 0%, rgba(22, 186, 173, 0.12) 50%, rgba(200, 223, 138, 0.12) 100%);
+    background-attachment: fixed;
+    @apply text-mpaDarkBlue;
+  }
+  .page__content {
+    @apply py-6 md:py-8;
   }
 
   /* headings */
   h1 {
+    @apply text-4xl font-bold mb-6;
   }
 
   h2 {
+    @apply text-3xl font-bold mb-4;
   }
 
   h3 {
+    @apply text-xl font-bold mb-2;
   }
 
   h4 {
@@ -39,7 +46,10 @@
   }
 
   a {
-    
+    @apply text-mpaLightBlue hover:text-mpaDarkBlue transition-colors duration-200;
+  }
+  a.is-active {
+    @apply text-mpaYellow;
   }
 
   main div a,
@@ -53,13 +63,16 @@
 
   /* paragraphs */
   p {
-    @apply text-base md:text-lg leading-relaxed mb-6;
+    @apply text-base leading-relaxed mb-6;
+  }
+  p:last-child {
+    @apply mb-0;
   }
 
   /* lists */
   ul,
   ol {
-    @apply mb-6 ml-4 md:ml-6 text-base md:text-lg leading-relaxed;
+    @apply mb-6 ml-4 md:ml-6 text-base leading-relaxed;
   }
 
   ul {
@@ -80,10 +93,6 @@
   li {
     @apply mb-2;
   }
-
-  /* li:last-child {
-    @apply mb-0;
-  } */
 }
 
 @layer components {

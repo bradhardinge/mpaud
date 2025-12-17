@@ -1,0 +1,38 @@
+{% if block.title %}<h2 class="text-center">{{ block.title }}</h2>{% endif %}
+{% if block.cards|length %}
+  <div class="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+    {% for card in block.cards %}
+      <div class="flex flex-col gap-6 md:gap-10 bg-white rounded-lg shadow-xl shadow-mpaLightBlue/5 p-6 md:p-10 md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+        {% if card.image %}
+          {% set image = card.image.one() %}
+          {% if image %}
+            <div class="md:basis-1/4">
+              <img 
+                src="{{ image.url }}" alt="{{ image.alt }}" width="{{ image.width }}" height="{{ image.height }}"
+                {% if block.imageStyle == "logo" %}
+                  class="w-56 h-auto mx-auto" 
+                {% else %}
+                  class="w-full h-auto aspect-[5/3] md:aspect-[4/3] object-cover block rounded-md shadow-md" 
+                {% endif %}
+              />
+            </div>
+          {% endif %}  
+        {% endif %}
+        <div class="md:basis-3/4">      
+        {% if card.title %}
+          <h3>{{ card.title }}</h3>
+        {% endif %}
+        {{ card.richText_field | raw }}
+        {% if card.button.link_field %}
+          <a 
+            href="{{ card.button.link_field }}"
+            class="inline-block px-6 py-3 bg-mpaDarkBlue text-white no-underline italic font-semibold rounded-full hover:bg-mpaLightBlue hover:text-white"
+          >
+            {{ card.button.text_field }}
+          </a>
+        {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

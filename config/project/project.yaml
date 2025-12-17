@@ -1,4 +1,4 @@
-dateModified: 1764143275
+dateModified: 1765878393
 elementSources:
   craft\elements\Entry:
     -
@@ -91,15 +91,20 @@ meta:
   __names__:
     0f9093a9-149b-4e53-bb0b-7e22329362bd: Link # Link
     2c774dbf-fbfd-4a37-ac7e-e3ca01edce3c: 'Mornington Peninsula Audiology' # Mornington Peninsula Audiology
+    2d5fc64c-3fbb-4b72-8343-6150f7a39337: 'Footer 1' # Footer 1
     6ef48a00-f0c2-426a-889d-4dcc3c68d195: Color # Color
     6f3ca0b1-e09f-4925-9771-3f667dcb00c6: 'Mornington Peninsula Audiology' # Mornington Peninsula Audiology
+    7b3913ba-716a-4b58-a671-73c82c35d189: Soon # Soon
     8ff32f81-123b-4d3a-ad39-62710da32094: 'Link Cards' # Link Cards
     9d66ef4b-2856-4a71-9b0a-fd012ac57ea8: 'Highlight Boxes' # Highlight Boxes
     34f458c7-b717-442c-a916-61606cbf90b1: 'Rich Text' # Rich Text
     42fa50fb-2b85-4a3e-8903-15993ef32517: Pages # Pages
+    45cbd9d9-ab2b-4b09-83ad-78bb1af868ce: Header # Header
     55b0d170-4974-403d-b5ff-e22661a0015b: 'Callout Banner' # Callout Banner
+    60f7c11a-bf5f-47c4-94a5-23ede428c406: 'Footer 2' # Footer 2
     63a398d1-b83c-4fab-9c1f-713ff1fa79b4: Card # Card
     073b2855-a336-4cd0-b263-82b6456e86f5: Page # Page
+    0102c154-7ae3-4e12-aad3-baffaa9f5873: 'Footer 3' # Footer 3
     00290af5-f690-45cb-af8d-02bf8d8ca275: Alignment # Alignment
     693cd97b-ac7f-4b6c-82d5-87c4e7f820a0: Image # Image
     851c479c-a9eb-4c2a-b36b-8cf1d7a6fec8: 'Rich Text + Image' # Rich Text + Image
@@ -120,8 +125,9 @@ meta:
     d641485b-e63f-4a4d-a871-4371407aa5c6: 'Locations Map' # Locations Map
     dccda9ee-32a2-4263-8502-f56aa033d788: 'Highlight Boxes' # Highlight Boxes
     de9382d4-0aaf-4d3d-bbab-1c6f59951274: 'Highlight Box' # Highlight Box
+    e9ba0186-b590-42ee-85bd-39f04ab33695: 'Image Style' # Image Style
     ee67e885-07fb-43b3-8d67-edff0871c3cd: 'Rich Text' # Rich Text
-    f1a9917d-3e77-4e70-be3b-a8ff2bf30299: Icon # Icon
+    ef526696-6921-4e60-bcc4-8551b40df027: 'Slide out' # Slide out
     fd8f58eb-9e45-4ac8-ac27-aa5e37f4a69f: 'Call to Action' # Call to Action
     ff7f1b41-ed40-43ec-acfb-2cccdef370d3: Locations # Locations
 plugins:
@@ -137,6 +143,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: L255KLBTVQPLB4KX9BWG2KUG
+    schemaVersion: 2.1.1
   seomatic:
     edition: standard
     enabled: true

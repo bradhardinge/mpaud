@@ -21,11 +21,13 @@
 		<link href="{{ siteUrl('css/output.css') }}" rel="stylesheet">
 	</head>
 
-	<body class="flex flex-col min-h-screen">
+	<body class="flex flex-col min-h-screen body--{{ entry.slug }}">
 		<a href="#main" class="transition left-0 absolute p-3 m-3 -translate-y-16 focus:translate-y-0 bg-slate-50">Skip to main content</a>
 
-		{% include "_partials/header" %}
-
+		{% block header %}
+			{% include "_partials/header" %}
+		{% endblock %}
+		
 		{% if flashes|length %}
 			<div class="bg-red-600 text-slate-50 text-center">
 				{% for level, flash in flashes %}
@@ -37,13 +39,15 @@
 		<main class="page {{ entry.slug }} flex-grow" id="main" tabindex="-1">
 			{% block content %}{% endblock %}
 		</main>
-
+		
+		{% block footer %}
 			{% include "_partials/footer" %}
+		{% endblock %}			
 
-			{# Alpine.js UI #}
-			<script src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
+		{# Alpine.js UI #}
+		<script src="https://unpkg.com/@alpinejs/ui@3.14.9/dist/cdn.min.js"></script>
 
-			{# Main JS #}
-			<script src="{{ siteUrl('dist/main.min.js') }}"></script>
-		</body>
-	</html>
+		{# Main JS #}
+		<script src="{{ siteUrl('dist/main.min.js') }}"></script>
+	</body>
+</html>

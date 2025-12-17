@@ -3,9 +3,9 @@ enableVersioning: true
 entryTypes:
   -
     uid: 073b2855-a336-4cd0-b263-82b6456e86f5 # Page
-handle: home
+handle: soon
 maxAuthors: 1
-name: Home
+name: Soon
 previewTargets:
   -
     label: 'Primary entry page'
@@ -16,6 +16,6 @@ siteSettings:
   6f3ca0b1-e09f-4925-9771-3f667dcb00c6: # Mornington Peninsula Audiology
     enabledByDefault: true
     hasUrls: true
-    template: pages/home.twig
-    uriFormat: home
+    template: pages/soon.twig
+    uriFormat: __home__
 type: single

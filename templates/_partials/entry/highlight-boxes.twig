@@ -1,0 +1,38 @@
+{% if block.title %}<h1 class="text-center italic bg-clip-text text-transparent bg-gradient-to-r from-[#00A7EA] via-[#16BAAD] to-[#C8DF8A]">{{ block.title }}</h1>{% endif %}  
+<style> 
+@keyframes highlightSolo {
+  0%, 8%, 100% {
+    transform: scale(1);
+    background-color: rgba(var(--box-r), var(--box-g), var(--box-b), 0.3);
+    color: var(--text-dark, #0b2c59);
+  }
+  10%, 30% {
+    transform: scale(1.05);
+    background-color: rgba(var(--box-r), var(--box-g), var(--box-b), 1);
+    color: #ffffff;
+  }
+  40% {
+    transform: scale(1);
+    background-color: rgba(var(--box-r), var(--box-g), var(--box-b), 0.3);
+    color: var(--text-dark, #0b2c59);
+  }
+}
+</style>
+{% if block.highlightBoxes|length %}
+  {% set boxCount = block.highlightBoxes|length %}
+  <div class="flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center">
+    {% for highlightBox in block.highlightBoxes %}
+      <div
+        class="flex w-full gap-6 items-center bg-white rounded-lg shadow-xl text-center text-mpaDarkBlue shadow-mpaLightBlue/5 px-10 aspect-[4/3] md:w-[calc(50%-0.75rem)] transition-all"
+        style="--box-r: {{ highlightBox.color_field.getRed() }}; --box-g: {{ highlightBox.color_field.getGreen() }}; --box-b: {{ highlightBox.color_field.getBlue() }}; --text-dark: #0b2c59; background-color: rgba({{ highlightBox.color_field.getRed() }}, {{ highlightBox.color_field.getGreen() }}, {{ highlightBox.color_field.getBlue() }}, 0.3); animation: highlightSolo {{ (boxCount * 5)|number_format(1, '.', '') }}s ease-in-out infinite both; animation-delay: {{ (loop.index0 * 5)|number_format(1, '.', '') }}s;"
+      >
+        <div class="pt-3">
+          {% if highlightBox.title %}
+            <h3>{{ highlightBox.title }}</h3>
+          {% endif %}
+          {{ highlightBox.richText_field | raw }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
