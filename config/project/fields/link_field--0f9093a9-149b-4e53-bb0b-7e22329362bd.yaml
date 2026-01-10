@@ -36,10 +36,10 @@ settings:
               - allowCustomSchemes
               - ''
   types:
-    - entry
+    - tel
     - url
     - email
-    - tel
+    - entry
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link

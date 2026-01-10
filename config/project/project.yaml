@@ -1,4 +1,4 @@
-dateModified: 1765878393
+dateModified: 1768029101
 elementSources:
   craft\elements\Entry:
     -
@@ -104,9 +104,11 @@ meta:
     60f7c11a-bf5f-47c4-94a5-23ede428c406: 'Footer 2' # Footer 2
     63a398d1-b83c-4fab-9c1f-713ff1fa79b4: Card # Card
     073b2855-a336-4cd0-b263-82b6456e86f5: Page # Page
+    99e92ebb-e4b2-4db7-ae38-7237a9c6d13b: Header # Header
     0102c154-7ae3-4e12-aad3-baffaa9f5873: 'Footer 3' # Footer 3
     00290af5-f690-45cb-af8d-02bf8d8ca275: Alignment # Alignment
     693cd97b-ac7f-4b6c-82d5-87c4e7f820a0: Image # Image
+    749c27f6-6f32-4772-a7af-13c0cece2d17: Footer # Footer
     851c479c-a9eb-4c2a-b36b-8cf1d7a6fec8: 'Rich Text + Image' # Rich Text + Image
     5472da21-93e4-472d-8c5b-c487721f2715: Button # Button
     8049a6a3-dfd9-43d8-a9c4-54f890fb3824: Location # Location
