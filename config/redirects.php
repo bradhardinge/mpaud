@@ -29,4 +29,6 @@
  * @link https://craftcms.com/docs/5.x/system/routing.html#redirection
  */
 
-return [];
+return [
+    'home' => '/',
+];
