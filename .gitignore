@@ -7,3 +7,5 @@ node_modules
 /node_modules
 _backups
 config.codekit3
+/_files
+*.sql

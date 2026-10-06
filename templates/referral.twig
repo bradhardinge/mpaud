@@ -1,0 +1,309 @@
+{# Stand-in entry so the layout's body class resolves without a CMS entry #}
+{% set entry = { slug: 'referral' } %}
+{% extends "_layouts/default" %}
+
+{# Unlisted page: keep it out of search engines #}
+{% do seomatic.meta.seoTitle('Audiology Referral') %}
+{% do seomatic.meta.robots('noindex, nofollow') %}
+
+{% set services = [
+	'Full Audiological Assessment incl. Air, Bone, Speech & Immittance testing',
+	'Paediatric Assessment (6 months - 5 years)',
+	'Immittance testing only',
+	'Auditory Processing Assessment (7-18 years)',
+	'Hearing Assistance Assessment (Hearing Aids, Assistive Listening Devices)',
+	'Tinnitus Management',
+	'Specialty Hearing Tests (Pre-employment, Industrial, Police, Aviation)',
+	'Custom Ear Plugs (Sleep, Noise, Musician, Water Protection)',
+	'Wax Removal (Micro-suction & Curettage techniques)',
+] %}
+{% set states = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'] %}
+
+{# Same classes as the link buttons in _partials/entry (e.g. callout-banner), plus the transition links get from the base styles #}
+{% set button = 'inline-block px-6 py-3 bg-mpaDarkBlue text-white no-underline italic font-semibold rounded-full hover:bg-mpaLightBlue hover:text-white transition-colors duration-200' %}
+
+{% macro tick(condition) %}
+	<span class="referral-box" aria-hidden="true">
+		<svg x-show="{{ condition }}" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg>
+	</span>
+	<span class="sr-only" x-text="{{ condition }} ? '(selected)' : '(not selected)'"></span>
+{% endmacro %}
+
+{% block content %}
+
+	{# @page can't be scoped by a selector, so it lives here rather than in the site stylesheet #}
+	<style>
+		@page {
+			size: A4 portrait;
+			margin: 10mm 12mm;
+		}
+	</style>
+
+	<div class="page__content">
+		<div class="container mx-auto pb-10" x-data="referral">
+			<div class="max-w-3xl mx-auto">
+
+				<div class="referral-screen-only pt-10 pb-4 text-center">
+					<h1 class="mb-0 pb-0">Audiology Referral</h1>
+				</div>
+
+				<div class="referral-screen-only pt-4 pb-8" x-show="view === 'form'">
+					<p>This form is for referring practitioners. Nothing you enter is saved or transmitted. Complete the form, then print and sign it.</p>
+					<noscript>
+						<p>This form needs JavaScript enabled to preview and print the referral.</p>
+					</noscript>
+				</div>
+
+				{# Form: nothing is submitted, values only ever live in the page #}
+				<form class="referral-form" x-show="view === 'form'" @submit.prevent="preview()" novalidate>
+
+					<fieldset>
+						<legend>Patient Details</legend>
+
+						<div class="referral-field">
+							<label for="patientName">Patient Name</label>
+							<input class="referral-input" type="text" id="patientName" x-model="f.patientName" autocomplete="off">
+						</div>
+						<div class="referral-field">
+							<label for="patientAddress">Address</label>
+							<input class="referral-input" type="text" id="patientAddress" x-model="f.patientAddress" autocomplete="off">
+						</div>
+						<div class="grid gap-x-4 sm:grid-cols-2">
+							<div class="referral-field">
+								<label for="patientDob">DOB</label>
+								<input class="referral-input" type="date" id="patientDob" x-model="f.patientDob" autocomplete="off">
+							</div>
+							<div class="referral-field">
+								<label for="patientPhone">Phone</label>
+								<input class="referral-input" type="tel" id="patientPhone" x-model="f.patientPhone" autocomplete="off">
+							</div>
+						</div>
+						<div class="referral-field">
+							<label for="patientEmail">Email</label>
+							<input class="referral-input" type="email" id="patientEmail" x-model="f.patientEmail" autocomplete="off">
+						</div>
+						<div class="referral-field">
+							<label for="reason">Reason for referral</label>
+							<textarea class="referral-input" id="reason" rows="3" x-model="f.reason" autocomplete="off"></textarea>
+						</div>
+
+						<fieldset class="referral-subgroup">
+							<legend>Are there any contraindications to the fitting of a hearing device?</legend>
+							<div class="flex gap-8">
+								<label class="referral-choice">
+									<input type="radio" name="contraindications" value="Yes" x-model="f.contraindications" autocomplete="off">
+									<span>Yes</span>
+								</label>
+								<label class="referral-choice">
+									<input type="radio" name="contraindications" value="No" x-model="f.contraindications" autocomplete="off">
+									<span>No</span>
+								</label>
+							</div>
+						</fieldset>
+					</fieldset>
+
+					<fieldset>
+						<legend>Services Requested</legend>
+
+						{% for service in services %}
+							<label class="referral-choice">
+								<input type="checkbox" x-model="f.services[{{ loop.index0 }}]">
+								<span>{{ service }}</span>
+							</label>
+						{% endfor %}
+					</fieldset>
+
+					<fieldset>
+						<legend>Referring Medical Practitioner Certification</legend>
+
+						<div class="grid gap-x-4 sm:grid-cols-2">
+							<div class="referral-field">
+								<label for="gpName">Name</label>
+								<input class="referral-input" type="text" id="gpName" x-model="f.gpName">
+							</div>
+							<div class="referral-field">
+								<label for="providerNumber">Medicare Provider Number</label>
+								<input class="referral-input" type="text" id="providerNumber" x-model="f.providerNumber">
+							</div>
+							<div class="referral-field">
+								<label for="gpPhone">Contact Number</label>
+								<input class="referral-input" type="tel" id="gpPhone" x-model="f.gpPhone">
+							</div>
+							<div class="referral-field">
+								<label for="referralDate">Date of Referral</label>
+								<input class="referral-input" type="date" id="referralDate" x-model="f.referralDate">
+							</div>
+						</div>
+						<div class="referral-field">
+							<label for="centreName">Medical Centre Name</label>
+							<input class="referral-input" type="text" id="centreName" x-model="f.centreName">
+						</div>
+						<div class="referral-field">
+							<label for="centreAddress">Medical Centre Address</label>
+							<input class="referral-input" type="text" id="centreAddress" x-model="f.centreAddress">
+						</div>
+						<div class="grid gap-x-4 sm:grid-cols-3">
+							<div class="referral-field">
+								<label for="suburb">Suburb</label>
+								<input class="referral-input" type="text" id="suburb" x-model="f.suburb">
+							</div>
+							<div class="referral-field">
+								<label for="state">State</label>
+								<select class="referral-input" id="state" x-model="f.state">
+									<option value=""></option>
+									{% for state in states %}
+										<option value="{{ state }}">{{ state }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="referral-field">
+								<label for="postcode">Postcode</label>
+								<input class="referral-input" type="text" id="postcode" inputmode="numeric" maxlength="4" x-model="f.postcode">
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="pt-2 text-center">
+						<button type="submit" class="{{ button }}">Preview referral</button>
+					</div>
+				</form>
+
+				{# Summary: read-only, and the only thing that prints #}
+				<div class="referral-summary" x-show="view === 'summary'" x-cloak>
+
+					<div class="referral-screen-only flex flex-wrap justify-center gap-3 pt-4 pb-8">
+						<button type="button" class="{{ button }}" x-ref="print" @click="window.print()">Print</button>
+						<button type="button" class="{{ button }}" @click="edit()">Edit</button>
+						<button type="button" class="{{ button }}" @click="clear()">Clear</button>
+					</div>
+
+					<div class="referral-sheet">
+
+						<div class="referral-sheet__header">
+							<img class="referral-sheet__logo" src="{{ siteUrl('assets/images/mpaud-logo-h-dark.svg') }}" alt="Mornington Peninsula Audiology">
+							<div class="referral-sheet__contact">
+								<h2>Audiology Referral</h2>
+								<p class="referral-sheet__locations">Mornington | Frankston | Somerville</p>
+								<p><b>t.</b> {{ header.phoneLinkText|default('03 5955 2013') }} &nbsp; <b>f.</b> 03 6121 6162</p>
+								<p><b>e.</b> info@mpaud.com.au &nbsp; <b>www.mpaud.com.au</b></p>
+								<p>Medicare rebates are available for audiological assessments</p>
+							</div>
+						</div>
+
+						<h3>Patient Details</h3>
+						<table>
+							<tbody>
+								<tr><th scope="row">Patient Name</th><td x-text="f.patientName"></td></tr>
+								<tr><th scope="row">Address</th><td x-text="f.patientAddress"></td></tr>
+								<tr><th scope="row">DOB</th><td x-text="formatDate(f.patientDob)"></td></tr>
+								<tr><th scope="row">Phone</th><td x-text="f.patientPhone"></td></tr>
+								<tr><th scope="row">Email</th><td x-text="f.patientEmail"></td></tr>
+								<tr>
+									<th scope="row">Reason for referral</th>
+									<td class="referral-sheet__reason" :class="{ 'is-empty': !f.reason.trim() }" x-text="f.reason.trim()"></td>
+								</tr>
+								<tr>
+									<th scope="row">Are there any contraindications to the fitting of a hearing device?</th>
+									<td class="referral-sheet__choices">
+										<span>{{ _self.tick("f.contraindications === 'Yes'") }} Yes</span>
+										<span>{{ _self.tick("f.contraindications === 'No'") }} No</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<h3>Services Requested</h3>
+						<ul class="referral-sheet__services">
+							{% for service in services %}
+								<li>{{ _self.tick('f.services[' ~ loop.index0 ~ ']') }} {{ service }}</li>
+							{% endfor %}
+						</ul>
+
+						<h3>Referring Medical Practitioner Certification</h3>
+						<table>
+							<tbody>
+								<tr><th scope="row">Name</th><td x-text="f.gpName"></td></tr>
+								<tr><th scope="row">Medicare Provider Number</th><td x-text="f.providerNumber"></td></tr>
+								<tr><th scope="row">Contact Number</th><td x-text="f.gpPhone"></td></tr>
+								<tr><th scope="row">Date of Referral</th><td x-text="formatDate(f.referralDate)"></td></tr>
+								<tr><th scope="row">Medical Centre Name</th><td x-text="f.centreName"></td></tr>
+								<tr><th scope="row">Medical Centre Address</th><td x-text="f.centreAddress"></td></tr>
+								<tr><th scope="row">Suburb</th><td x-text="f.suburb"></td></tr>
+								<tr><th scope="row">State</th><td x-text="f.state"></td></tr>
+								<tr><th scope="row">Postcode</th><td x-text="f.postcode"></td></tr>
+								<tr class="referral-sheet__signature"><th scope="row">Signature</th><td></td></tr>
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener('alpine:init', () => {
+			const today = () => {
+				const d = new Date();
+				const pad = (n) => String(n).padStart(2, '0');
+				return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+			};
+
+			const blank = () => ({
+				patientName: '',
+				patientAddress: '',
+				patientDob: '',
+				patientPhone: '',
+				patientEmail: '',
+				reason: '',
+				contraindications: '',
+				services: Array({{ services|length }}).fill(false),
+				gpName: '',
+				providerNumber: '',
+				gpPhone: '',
+				referralDate: today(),
+				centreName: '',
+				centreAddress: '',
+				suburb: '',
+				state: '',
+				postcode: '',
+			});
+
+			// Values are held in memory only: nothing is stored or sent anywhere
+			Alpine.data('referral', () => ({
+				view: 'form',
+				f: blank(),
+
+				// yyyy-mm-dd from the date input -> DD/MM/YYYY
+				formatDate(value) {
+					const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+					return match ? `${match[3]}/${match[2]}/${match[1]}` : '';
+				},
+
+				show(view) {
+					this.view = view;
+					this.$nextTick(() => {
+						window.scrollTo(0, 0);
+						if (view === 'summary') this.$refs.print.focus({ preventScroll: true });
+					});
+				},
+
+				preview() {
+					this.show('summary');
+				},
+
+				edit() {
+					this.show('form');
+				},
+
+				clear() {
+					if (!window.confirm('Clear all details from this referral?')) return;
+					this.f = blank();
+					this.show('form');
+				},
+			}));
+		});
+	</script>
+
+{% endblock %}
