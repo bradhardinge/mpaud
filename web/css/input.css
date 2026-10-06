@@ -109,4 +109,234 @@
   .rich-text ul li {
   }
 
+  /* ------ referral form (/referral) ------ */
+  .referral-form fieldset {
+    @apply mb-8 min-w-0;
+  }
+
+  .referral-form fieldset > legend {
+    @apply text-xl font-bold mb-4 pb-2 w-full border-b-2 border-mpaDarkBlue;
+  }
+
+  .referral-form .referral-subgroup {
+    @apply mb-0 mt-2;
+  }
+
+  .referral-form .referral-subgroup > legend {
+    @apply text-base font-semibold mb-2 pb-0 border-0;
+  }
+
+  .referral-field {
+    @apply mb-4;
+  }
+
+  .referral-field label {
+    @apply block font-semibold mb-1;
+  }
+
+  .referral-input {
+    @apply block w-full min-h-[2.75rem] rounded-md border border-mpaDarkBlue/40 bg-white px-3 py-2 text-base text-mpaDarkBlue;
+  }
+
+  .referral-input:focus-visible,
+  .referral-choice input:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-vividBlue;
+  }
+
+  .referral-choice {
+    @apply flex items-start gap-3 py-1.5 cursor-pointer;
+  }
+
+  .referral-choice input {
+    @apply mt-1 h-5 w-5 shrink-0 accent-vividBlue;
+  }
+
+  /* ------ referral summary / printout ------ */
+  .referral-sheet {
+    @apply bg-white text-black border border-mpaDarkBlue/20 shadow-section p-5 sm:p-8 text-sm;
+  }
+
+  .referral-sheet__header {
+    @apply flex flex-col items-center gap-4 pb-4 border-b-2 border-black sm:flex-row sm:justify-between;
+  }
+
+  .referral-sheet__logo {
+    @apply w-52 h-auto shrink-0;
+  }
+
+  .referral-sheet__contact {
+    @apply text-center sm:text-right;
+  }
+
+  .referral-sheet__contact h2 {
+    @apply text-2xl font-bold mb-1;
+  }
+
+  .referral-sheet__contact p {
+    @apply text-sm leading-snug mb-0;
+  }
+
+  .referral-sheet__contact .referral-sheet__locations {
+    @apply font-bold;
+  }
+
+  .referral-sheet h3 {
+    @apply text-base font-bold mt-5 mb-1;
+  }
+
+  .referral-sheet table {
+    @apply w-full table-fixed border-collapse;
+  }
+
+  .referral-sheet th {
+    @apply w-2/5 pr-3 pt-2 pb-1 text-left align-top font-semibold;
+  }
+
+  /* every value sits on a ruled line, so empty ones can be handwritten */
+  .referral-sheet td {
+    @apply h-8 pt-2 pb-1 align-bottom border-b border-black;
+    overflow-wrap: anywhere;
+  }
+
+  .referral-sheet .referral-sheet__reason {
+    @apply whitespace-pre-line;
+  }
+
+  .referral-sheet .referral-sheet__reason.is-empty {
+    @apply h-16;
+  }
+
+  .referral-sheet .referral-sheet__choices {
+    @apply border-b-0;
+  }
+
+  .referral-sheet .referral-sheet__choices > span {
+    @apply inline-flex items-center gap-2 mr-6;
+  }
+
+  .referral-sheet .referral-sheet__signature td {
+    @apply h-16;
+  }
+
+  .referral-sheet__services {
+    @apply list-none m-0 p-0 text-sm;
+  }
+
+  .referral-sheet__services li {
+    @apply flex items-start gap-2 m-0 py-1;
+  }
+
+  .referral-box {
+    @apply inline-flex h-4 w-4 shrink-0 items-center justify-center border border-black;
+  }
+
+  .referral-box svg {
+    @apply h-3 w-3;
+  }
+
+  /* Print only the referral sheet, on a single A4 page */
+  @media print {
+    body.body--referral {
+      display: block;
+      min-height: 0;
+      background: #fff !important;
+    }
+
+    body.body--referral > *:not(main),
+    .referral-screen-only,
+    .referral-form {
+      display: none !important;
+    }
+
+    .referral-summary {
+      display: block !important;
+    }
+
+    body.body--referral .page__content,
+    body.body--referral .container {
+      max-width: none;
+      padding: 0;
+    }
+
+    body.body--referral .container > div {
+      max-width: none;
+    }
+
+    .referral-sheet {
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+      font-size: 9pt;
+      line-height: 1.3;
+    }
+
+    .referral-sheet__header {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 2mm;
+    }
+
+    .referral-sheet__logo {
+      width: 60mm;
+    }
+
+    .referral-sheet__contact {
+      text-align: right;
+    }
+
+    .referral-sheet__contact h2 {
+      font-size: 16pt;
+      line-height: 1.2;
+      margin-bottom: 0.5mm;
+    }
+
+    .referral-sheet__contact p,
+    .referral-sheet__services {
+      font-size: 9pt;
+      line-height: 1.3;
+    }
+
+    .referral-sheet h3 {
+      font-size: 11pt;
+      line-height: 1.2;
+      margin-top: 3.5mm;
+      margin-bottom: 0;
+      break-after: avoid;
+    }
+
+    .referral-sheet th {
+      width: 30%;
+    }
+
+    .referral-sheet th,
+    .referral-sheet td {
+      height: 6mm;
+      padding-top: 1.4mm;
+      padding-bottom: 0.4mm;
+    }
+
+    .referral-sheet .referral-sheet__reason.is-empty {
+      height: 16mm;
+    }
+
+    .referral-sheet .referral-sheet__signature td {
+      height: 14mm;
+    }
+
+    .referral-sheet__services li {
+      padding-top: 0.5mm;
+      padding-bottom: 0.5mm;
+    }
+
+    .referral-box {
+      width: 3.4mm;
+      height: 3.4mm;
+    }
+
+    .referral-sheet tr,
+    .referral-sheet__services li {
+      break-inside: avoid;
+    }
+  }
+
 }
